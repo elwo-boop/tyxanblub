@@ -1,4 +1,6 @@
 import pygame, sys
+import random
+
 
 from pygame.locals import *
 
@@ -19,6 +21,11 @@ yell_hex = pygame.image.load("yell_hex.png").convert()
 
 
 white = (255, 255, 255)
+black = (0, 0, 0)
+
+def show_shape(shape):
+    screen.blit(shape, (random.randint(200, 800), random.randint(100, 600)))
+    pygame.display.update()
 
 while True:
     for event in pygame.event.get():
@@ -26,8 +33,11 @@ while True:
             pygame.quit()
             sys.exit()
 
-    screen.fill(white)
+    
 
-    pygame.display.update()
-    clock.tick(60)
+    screen.fill(black)
+    show_shape(orange_bolt)
+    show_shape(red_tri)
+
+    pygame.time.wait(1000)
 

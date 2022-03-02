@@ -17,11 +17,17 @@ purp_heart = pygame.image.load("purp_heart.png").convert()
 red_tri = pygame.image.load("red_tri.png").convert()
 yell_hex = pygame.image.load("yell_hex.png").convert()
 
+
+white = (255, 255, 255)
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
 
-    
+    screen.fill(white)
+
+    pygame.display.update()
+    clock.tick(60)
 
